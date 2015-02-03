@@ -69,4 +69,10 @@ class GameScene: SKScene {
 		}
 	}
 
+	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+		isFingerOnPaddle = false
+	}
+
+
+
 }
