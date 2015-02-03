@@ -413,6 +413,7 @@
 				FE1CDE291A8064E700CD3A22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE1CDE2A1A8064E700CD3A22 /* Build configuration list for PBXNativeTarget "BreakoutTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				FE1CDE2C1A8064E700CD3A22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
