@@ -13,9 +13,15 @@ let PaddleCategoryName = "paddle"
 let BlockCategoryName = "block"
 let BlockNodeCategoryName = "blockNode"
 
+// Set Category BitMasks
+let BallCategory   : UInt32 = 0x1 << 0 // 00000000000000000000000000000001
+let BottomCategory : UInt32 = 0x1 << 1 // 00000000000000000000000000000010
+let BlockCategory  : UInt32 = 0x1 << 2 // 00000000000000000000000000000100
+let PaddleCategory : UInt32 = 0x1 << 3 // 00000000000000000000000000001000
+
 var isFingerOnPaddle = false
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
 	override func didMoveToView(view: SKView) {
 
 		// Configure the Physics World itself
@@ -25,11 +31,29 @@ class GameScene: SKScene {
 		borderBody.friction = 0
 		// 3. Set physicsBody of scene to borderBody
 		self.physicsBody = borderBody
+
+		// Configure an edge based physics body for the bottom of the screen
+		let bottomRect = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 1)
+		let bottom = SKNode()
+		bottom.physicsBody = SKPhysicsBody(edgeLoopFromRect: bottomRect)
+		addChild(bottom)
+
+		// Establish the physicsWorld's gravity vector
 		physicsWorld.gravity = CGVectorMake(0, 0)
+		physicsWorld.contactDelegate = self
 
 		// Set up the ball with a physics body
 		let ball = childNodeWithName(BallCategoryName) as SKSpriteNode
 		ball.physicsBody!.applyImpulse(CGVectorMake(10, -10))
+
+		// Establish the nodes and categories - even the ones created in Scene Builder
+		let paddle = childNodeWithName(PaddleCategoryName) as SKSpriteNode!
+		bottom.physicsBody!.categoryBitMask = BottomCategory
+		ball.physicsBody!.categoryBitMask = BallCategory
+		paddle.physicsBody!.categoryBitMask = PaddleCategory
+
+		// Set the contact test bitMask for the ball
+		ball.physicsBody!.contactTestBitMask = BottomCategory
 
 		super.didMoveToView(view)
 	}
@@ -72,6 +96,28 @@ class GameScene: SKScene {
 	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
 		isFingerOnPaddle = false
 	}
+
+	func didBeginContact(contact: SKPhysicsContact) {
+		// 1. Create local variables for two physics bodies
+		var firstBody: SKPhysicsBody
+		var secondBody: SKPhysicsBody
+
+		// 2. Assign the two physics bodies so that the one with the lower category is always stored in firstBody
+		if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+			firstBody = contact.bodyA
+			secondBody = contact.bodyB
+		} else {
+			firstBody = contact.bodyB
+			secondBody = contact.bodyA
+		}
+
+		// 3. react to the contact between ball and bottom
+		if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == BottomCategory {
+			//TODO: Replace the log statement with display of Game Over Scene
+			println("Hit bottom. First contact has been made.")
+		}
+	}
+
 
 
 
