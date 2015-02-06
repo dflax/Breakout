@@ -89,6 +89,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		super.didMoveToView(view)
 	}
 
+	// Check if game has been one
+	func isGameWon() -> Bool {
+		var numberOfBricks = 0
+		self.enumerateChildNodesWithName(BlockCategoryName) {
+			node, stop in
+			numberOfBricks = numberOfBricks + 1
+		}
+		return numberOfBricks == 0
+	}
+
+	// Touch Handling
 	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 		var touch = touches.anyObject() as UITouch!
 		var touchLocation = touch.locationInNode(self)
@@ -128,7 +139,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		isFingerOnPaddle = false
 	}
 
+	// Handle collisions and contact
 	func didBeginContact(contact: SKPhysicsContact) {
+
+		if isGameWon() {
+			if let mainView = view {
+				let gameOverScene = GameOverScene.unarchiveFromFile("GameOverScene") as GameOverScene!
+				gameOverScene.gameWon = true
+				mainView.presentScene(gameOverScene)
+			}
+		}
+
 		// 1. Create local variables for two physics bodies
 		var firstBody: SKPhysicsBody
 		var secondBody: SKPhysicsBody
