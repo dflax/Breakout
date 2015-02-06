@@ -65,6 +65,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			block.physicsBody!.affectedByGravity = false
 			block.name = BlockCategoryName
 			block.physicsBody!.categoryBitMask = BlockCategory
+
+			block.physicsBody!.collisionBitMask = 0
+
 			addChild(block)
 		}
 
@@ -80,6 +83,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
 		// Set the contact test bitMask for the ball
 		ball.physicsBody!.contactTestBitMask = BottomCategory | BlockCategory
+
+		ball.physicsBody!.collisionBitMask = PaddleCategory
 
 		super.didMoveToView(view)
 	}
