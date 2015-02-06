@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE0E71541A84719B0089B806 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FE0E71531A84719B0089B806 /* GameOverScene.sks */; };
+		FE0E71561A8472A40089B806 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0E71551A8472A40089B806 /* GameOverScene.swift */; };
 		FE1CDE0A1A8064E700CD3A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1CDE091A8064E700CD3A22 /* AppDelegate.swift */; };
 		FE1CDE0C1A8064E700CD3A22 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FE1CDE0B1A8064E700CD3A22 /* GameScene.sks */; };
 		FE1CDE0E1A8064E700CD3A22 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1CDE0D1A8064E700CD3A22 /* GameScene.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE0E71531A84719B0089B806 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
+		FE0E71551A8472A40089B806 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		FE1CDE041A8064E700CD3A22 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1CDE081A8064E700CD3A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1CDE091A8064E700CD3A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +87,9 @@
 			children = (
 				FE1CDE091A8064E700CD3A22 /* AppDelegate.swift */,
 				FE1CDE0B1A8064E700CD3A22 /* GameScene.sks */,
+				FE0E71551A8472A40089B806 /* GameOverScene.swift */,
 				FE1CDE0D1A8064E700CD3A22 /* GameScene.swift */,
+				FE0E71531A84719B0089B806 /* GameOverScene.sks */,
 				FE1CDE0F1A8064E700CD3A22 /* GameViewController.swift */,
 				FE1CDE111A8064E700CD3A22 /* Main.storyboard */,
 				FE1CDE141A8064E700CD3A22 /* Images.xcassets */,
@@ -201,6 +207,7 @@
 				FE1CDE181A8064E700CD3A22 /* LaunchScreen.xib in Resources */,
 				FE1CDE151A8064E700CD3A22 /* Images.xcassets in Resources */,
 				FE1CDE0C1A8064E700CD3A22 /* GameScene.sks in Resources */,
+				FE0E71541A84719B0089B806 /* GameOverScene.sks in Resources */,
 				FE1CDE131A8064E700CD3A22 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +228,7 @@
 			files = (
 				FE1CDE0E1A8064E700CD3A22 /* GameScene.swift in Sources */,
 				FE1CDE101A8064E700CD3A22 /* GameViewController.swift in Sources */,
+				FE0E71561A8472A40089B806 /* GameOverScene.swift in Sources */,
 				FE1CDE0A1A8064E700CD3A22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

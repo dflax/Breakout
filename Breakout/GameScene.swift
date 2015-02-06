@@ -115,6 +115,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == BottomCategory {
 			//TODO: Replace the log statement with display of Game Over Scene
 			println("Hit bottom. First contact has been made.")
+
+			if let mainView = view {
+				let gameOverScene = GameOverScene.unarchiveFromFile("GameOverScene") as GameOverScene!
+				gameOverScene.gameWon = false
+				mainView.presentScene(gameOverScene)
+			}
 		}
 	}
 
