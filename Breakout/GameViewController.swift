@@ -33,8 +33,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view.
+//        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+
+		if let scene = GameOverScene.unarchiveFromFile("GameOverScene") as? GameOverScene {
+
+			// Configure the view.
             let skView = self.view as SKView
             skView.showsFPS = true
             skView.showsNodeCount = true

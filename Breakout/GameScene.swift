@@ -99,6 +99,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		return numberOfBricks == 0
 	}
 
+	// Overide the update method to adjust and smooth out ball velocity
+	override func update(currentTime: NSTimeInterval) {
+		let ball = self.childNodeWithName(BallCategoryName) as SKSpriteNode!
+
+		let maxSpeed: CGFloat = 1000.0
+		let speed = sqrt(ball.physicsBody!.velocity.dx * ball.physicsBody!.velocity.dx + ball.physicsBody!.velocity.dy * ball.physicsBody!.velocity.dy)
+
+		if speed > maxSpeed {
+			ball.physicsBody!.linearDamping = 0.4
+		} else {
+			ball.physicsBody!.linearDamping = 0.0
+		}
+	}
+
 	// Touch Handling
 	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 		var touch = touches.anyObject() as UITouch!
