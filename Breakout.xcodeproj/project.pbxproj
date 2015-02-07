@@ -17,6 +17,7 @@
 		FE1CDE151A8064E700CD3A22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1CDE141A8064E700CD3A22 /* Images.xcassets */; };
 		FE1CDE181A8064E700CD3A22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE1CDE161A8064E700CD3A22 /* LaunchScreen.xib */; };
 		FE1CDE241A8064E700CD3A22 /* BreakoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1CDE231A8064E700CD3A22 /* BreakoutTests.swift */; };
+		FEDFAC691A8590ED0050DA8B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FEDFAC681A8590ED0050DA8B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		FE1CDE1D1A8064E700CD3A22 /* BreakoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1CDE221A8064E700CD3A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1CDE231A8064E700CD3A22 /* BreakoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutTests.swift; sourceTree = "<group>"; };
+		FEDFAC681A8590ED0050DA8B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		FE1CDDFB1A8064E700CD3A22 = {
 			isa = PBXGroup;
 			children = (
+				FEDFAC681A8590ED0050DA8B /* README.md */,
 				FE1CDE061A8064E700CD3A22 /* Breakout */,
 				FE1CDE201A8064E700CD3A22 /* BreakoutTests */,
 				FE1CDE051A8064E700CD3A22 /* Products */,
@@ -228,6 +231,7 @@
 			files = (
 				FE1CDE0E1A8064E700CD3A22 /* GameScene.swift in Sources */,
 				FE1CDE101A8064E700CD3A22 /* GameViewController.swift in Sources */,
+				FEDFAC691A8590ED0050DA8B /* README.md in Sources */,
 				FE0E71561A8472A40089B806 /* GameOverScene.swift in Sources */,
 				FE1CDE0A1A8064E700CD3A22 /* AppDelegate.swift in Sources */,
 			);
