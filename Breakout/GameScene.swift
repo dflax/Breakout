@@ -45,6 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		// Set up blocks to attack!
 		// 1. Store some useful constants
 		let numberOfBlocks = 5
+		let numberOfBlockRows = 3
 
 		let blockWidth = SKSpriteNode(imageNamed: "block.png").size.width
 		let totalBlocksWidth = blockWidth * CGFloat(numberOfBlocks)
