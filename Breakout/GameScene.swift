@@ -60,7 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		for columns in 0..<numberOfBlocks {
 			for rows in 0..<numberOfBlockRows {
 				let block = SKSpriteNode(imageNamed: "block.png")
-				block.position = CGPointMake(xOffset + CGFloat(CGFloat(columns) + 0.5)*blockWidth + CGFloat(columns-1)*padding, CGRectGetHeight(frame) * 0.8 - rows * block.frame.height * padding)
+				block.position = CGPointMake(xOffset + CGFloat(CGFloat(columns) + 0.5)*blockWidth + CGFloat(columns-1)*padding, CGRectGetHeight(frame) * 0.8 - CGFloat(rows) * block.frame.height)
 				block.physicsBody = SKPhysicsBody(rectangleOfSize: block.frame.size)
 				block.physicsBody!.allowsRotation = false
 				block.physicsBody!.friction = 0.0
