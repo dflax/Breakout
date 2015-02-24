@@ -57,19 +57,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		let xOffset = (CGRectGetWidth(frame) - totalBlocksWidth - totalPadding) / 2
 
 		// 3. Create the blocks and add them to the scene
-		for i in 0..<numberOfBlocks {
-			let block = SKSpriteNode(imageNamed: "block.png")
-			block.position = CGPointMake(xOffset + CGFloat(CGFloat(i) + 0.5)*blockWidth + CGFloat(i-1)*padding, CGRectGetHeight(frame) * 0.8)
-			block.physicsBody = SKPhysicsBody(rectangleOfSize: block.frame.size)
-			block.physicsBody!.allowsRotation = false
-			block.physicsBody!.friction = 0.0
-			block.physicsBody!.affectedByGravity = false
-			block.name = BlockCategoryName
-			block.physicsBody!.categoryBitMask = BlockCategory
+		for columns in 0..<numberOfBlocks {
+			for rows in 0..<numberOfBlockRows {
+				let block = SKSpriteNode(imageNamed: "block.png")
+				block.position = CGPointMake(xOffset + CGFloat(CGFloat(columns) + 0.5)*blockWidth + CGFloat(columns-1)*padding, CGRectGetHeight(frame) * 0.8 - rows * block.frame.height * padding)
+				block.physicsBody = SKPhysicsBody(rectangleOfSize: block.frame.size)
+				block.physicsBody!.allowsRotation = false
+				block.physicsBody!.friction = 0.0
+				block.physicsBody!.affectedByGravity = false
+				block.name = BlockCategoryName
+				block.physicsBody!.categoryBitMask = BlockCategory
 
-			block.physicsBody!.collisionBitMask = 0
+				block.physicsBody!.collisionBitMask = 0
 
-			addChild(block)
+				addChild(block)
+			}
 		}
 
 		// Set up the ball with a physics body
