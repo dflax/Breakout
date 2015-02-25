@@ -45,7 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		// Set up blocks to attack!
 		// 1. Store some useful constants
 		let numberOfBlocks = 5
-		let numberOfBlockRows = 3
+		let numberOfBlockRows = 6
 
 		let blockWidth = SKSpriteNode(imageNamed: "block.png").size.width
 		let totalBlocksWidth = blockWidth * CGFloat(numberOfBlocks)
@@ -60,7 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		for columns in 0..<numberOfBlocks {
 			for rows in 0..<numberOfBlockRows {
 				let block = SKSpriteNode(imageNamed: "block.png")
-				block.position = CGPointMake(xOffset + CGFloat(CGFloat(columns) + 0.5)*blockWidth + CGFloat(columns-1)*padding, CGRectGetHeight(frame) * 0.8 - CGFloat(rows) * block.frame.height)
+				block.position = CGPointMake(xOffset + CGFloat(CGFloat(columns) + 0.5)*blockWidth + CGFloat(columns-1)*padding, CGRectGetHeight(frame) * 0.8 - CGFloat(rows) * block.frame.height * 1.1)
 				block.physicsBody = SKPhysicsBody(rectangleOfSize: block.frame.size)
 				block.physicsBody!.allowsRotation = false
 				block.physicsBody!.friction = 0.0
